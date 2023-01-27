@@ -3,11 +3,7 @@ let dead: number = 0;
 
 let cells: number[][] = [
   [0, 1, 0],
-  [0, 0, 1],
+  [0, 1, 0],
   [1, 1, 1],
 ];
 console.table(cells);
-
-for (let i = 0; i < cells.length; i++) {}
-
-//
