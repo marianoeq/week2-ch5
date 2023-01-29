@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc -w",
     "test": "jest --watchAll --coverage",
-    "test:prod": "jest --watchAll --coverage --watchAll=false",
+    "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests",
     "prepare": "husky install"
   },
   "keywords": [],

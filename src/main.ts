@@ -7,3 +7,7 @@ let cells: number[][] = [
   [1, 1, 1],
 ];
 console.table(cells);
+
+// if dead cell is in contact with one or two alive cell, it keeps dead.
+// if dead cell is in contact with 3 alive cells, it turns alive.
+// if dead cell is in contact with more than 3 alive cells, it keeps dead.
