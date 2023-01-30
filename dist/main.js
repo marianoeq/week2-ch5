@@ -1,13 +1,9 @@
-let alive: number = 1;
-let dead: number = 0;
-
-let deathCellsInContactAlive: number = 0;
-let aliveCellsInContactAlive: number = 0;
-
-function checkCellsHorizontally(
-  cellsBoard: number[][],
-  currentCell: number | null
-) {
+'use strict';
+let alive = 1;
+let dead = 0;
+let deathCellsInContactAlive = 0;
+let aliveCellsInContactAlive = 0;
+function checkCellsHorizontally(cellsBoard, currentCell) {
   for (let i = 0; i < cellsBoard.length; i++) {
     for (let j = 0; j < cellsBoard.length; j++) {
       if (cellsBoard[i][j] === alive) {
@@ -23,7 +19,6 @@ function checkCellsHorizontally(
         )
           aliveCellsInContactAlive++;
       }
-
       if (cellsBoard[i][j] === dead) {
         currentCell = dead;
         if (
@@ -48,8 +43,7 @@ function checkCellsHorizontally(
     }
   }
 }
-
-function checkDown(cellsBoard: number[][], idx: number, currentCell: number) {
+function checkDown(cellsBoard, idx, currentCell) {
   for (let i = idx; i < cellsBoard.length; i++) {
     for (let j = 0; j < cellsBoard.length; j++) {
       if (currentCell === alive) {
@@ -63,7 +57,6 @@ function checkDown(cellsBoard: number[][], idx: number, currentCell: number) {
           cellsBoard[i][j - 1] !== undefined
         )
           aliveCellsInContactAlive++;
-
         if (currentCell === dead) {
           if (
             currentCell !== cellsBoard[i][j + 1] &&
@@ -80,8 +73,7 @@ function checkDown(cellsBoard: number[][], idx: number, currentCell: number) {
     }
   }
 }
-
-function checkUp(cellsBoard: number[][], idx: number, currentCell: number) {
+function checkUp(cellsBoard, idx, currentCell) {
   for (let i = idx; i < cellsBoard.length; i++) {
     for (let j = 0; j < cellsBoard.length; j++) {
       if (currentCell === alive) {
@@ -96,7 +88,6 @@ function checkUp(cellsBoard: number[][], idx: number, currentCell: number) {
         )
           aliveCellsInContactAlive++;
       }
-
       if (currentCell === dead) {
         if (
           currentCell !== cellsBoard[i][j + 1] &&
@@ -112,15 +103,13 @@ function checkUp(cellsBoard: number[][], idx: number, currentCell: number) {
     }
   }
 }
-
 function gameOfLife() {
-  let cellsBoard: number[][] = [
+  let cellsBoard = [
     [alive, alive, alive],
     [dead, dead, dead],
     [dead, dead, dead],
   ];
-
-  let currentCell: number | null = null;
+  let currentCell = null;
   checkCellsHorizontally(cellsBoard, currentCell);
   if (deathCellsInContactAlive === 3) {
     currentCell = alive;
@@ -129,7 +118,7 @@ function gameOfLife() {
     currentCell = dead;
   }
   if (aliveCellsInContactAlive === 2 || aliveCellsInContactAlive === 3) {
-    currentCell = alive;
+    currentCell;
   }
   if (aliveCellsInContactAlive >= 4) {
     currentCell = dead;
