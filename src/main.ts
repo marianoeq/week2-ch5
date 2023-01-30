@@ -129,7 +129,7 @@ function gameOfLife() {
     currentCell = dead;
   }
   if (aliveCellsInContactAlive === 2 || aliveCellsInContactAlive === 3) {
-    currentCell;
+    currentCell = alive;
   }
   if (aliveCellsInContactAlive >= 4) {
     currentCell = dead;
