@@ -1,5 +1,7 @@
 #Week 2 - Weekend Challenge
 
+## To initialize this project type `npm run tsc -w`in the console.
+
 ##Conway Game of Life 🦠 !
 
 - Una célula viva sigue las siguientes reglas:
